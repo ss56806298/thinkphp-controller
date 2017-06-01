@@ -1,0 +1,43 @@
+﻿#dungeon{
+	padding-top:72px;
+	padding-left:350px;
+	width:1300px;
+	overflow-x:auto;
+}
+
+#dungeon>form>div{
+	height:30px;
+}
+
+#dungeon>form>div>div{
+	display:inline-block;
+	width:250px;
+}
+
+#dungeon>form>div>div label{
+	display:inline-block;
+	color:#333;
+	width:160px;
+}
+
+#dungeon>form>div:last-child{
+	margin-top:50px;
+	margin-left:800px;
+	height:50px;
+}
+
+#dungeon>form>div:last-child label{
+	display:inline-block;
+	color:#333;
+	font-size:15px;
+	width:150px;
+}
+
+#dungeon>form>div:last-child input:last-child{
+	width:60px;
+	padding:3px 0px;
+}
+
+#dungeon>span{
+	color:#00cc00;
+}

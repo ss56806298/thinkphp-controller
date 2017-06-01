@@ -1,0 +1,63 @@
+﻿#save form p, #save form fieldset{
+	display:block;
+	margin-bottom:15px;
+}
+
+#save form p label{
+	display:inline-block;
+	color:#333;
+	font-size:14px;
+	width:60px;	
+}
+
+#save form p input{
+	padding:2px 3px;	
+}
+
+#save form p span{
+	display:inline-block;
+	font-size:14px;	
+	margin-left:5px;
+}
+
+#save form fieldset{
+	padding:10px 15px;	
+}
+
+#save form fieldset legend{
+	color:#333;
+	font-size:15px;	
+}
+
+#save form fieldset ul{
+	list-style:none;
+	clear:both;	
+}
+
+#save form fieldset ul li{
+	float:left;
+	width:170px;
+	height:30px;
+}
+
+#save form fieldset ul li label{
+	color:#333;
+	font-size:14px;
+}
+
+#save form fieldset ul li:nth-of-type(1) label{
+	font-weight:800;	
+}
+
+#save form>input{
+	display:block;
+	width:100px;
+	padding:3px 0px;
+	margin-left:400px;	
+}
+
+#save form fieldset>label{
+	display:inline-block;
+	width:50px;
+	color:#333;
+}

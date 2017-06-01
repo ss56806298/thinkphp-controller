@@ -1,0 +1,1 @@
+ALTER TABLE `res_roles` ADD `version_edit` TINYINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否可以修改版本号 0：不可以 1：可以' ;

@@ -1,0 +1,1 @@
+ALTER TABLE `res_roles` ADD `platforms` VARCHAR(100) NULL DEFAULT NULL COMMENT '具有访问权限的渠道列表' ;

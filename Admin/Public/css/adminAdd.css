@@ -1,0 +1,47 @@
+﻿#add{
+	padding-top:72px;
+	padding-left:350px;
+	width:1400px;
+	overflow-x:auto;	
+}
+
+#add form{
+	height:400px;
+}
+
+#add form p{
+	height:40px;	
+}
+
+#add form p label{
+	display:inline-block;
+	color:#333;
+	font-size:14px;
+	width:60px;
+}
+
+#add form p input{
+	padding:3px 5px;
+}
+
+#add form p span{
+	color:#cc0000;
+	font-size:14px;
+}
+
+#add form p select{
+	width:100px;
+	padding:2px 3px;	
+}
+
+#add form p select option{
+	padding:2px 3px;	
+}
+
+#add form p:last-child input{
+	display:block;
+	width:120px;
+	padding:3px 0px;
+	margin-top:25px;
+	margin-left:50px;
+}

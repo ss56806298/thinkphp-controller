@@ -1,0 +1,56 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/userIndex.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/userIndex.js?{:time()}"></script>
+
+<div id="user">
+	<form action="__SELF__" method="post" enctype="multipart/form-data">
+		<p>
+			<if condition="$tips eq 1">
+				<span>操作失败，用户名不能为空</span>
+			<elseif condition="$tips eq 2" />
+				<span>操作失败，用户名已存在</span>
+			<elseif condition="$tips eq 3"/>
+				<span>操作失败，旧密码错误</span>
+			<elseif condition="$tips eq 4"/>
+				<span>操作失败，两次输入的密码不一致</span>
+			<elseif condition="$tips eq 5"/>
+				<span>{$error}</span>
+			</if>
+		</p>
+		<p>
+			<label for="mg_true_name">真实姓名</label>
+			<input type="text" id="mg_true_name" name="mg_true_name" disabled="disabled" value="{$Think.session.mg_true_name}">
+		</p>
+		<p>
+			<label for="mg_name">用 户 名</label>
+			<input type="text" id="mg_name" name="mg_name" value="{$Think.session.mg_name}">
+			<span></span>
+		</p>
+		<p>
+			<label for="old_pwd">旧 密 码</label>
+			<input type="password" id="old_pwd" name="old_pwd" value="">
+			<span></span>
+		</p>
+		<p>
+			<label for="mg_pwd">新 密 码</label>
+			<input type="password" id="mg_pwd" name="mg_pwd" value="">
+			<span>* 留空为不修改</span>
+		</p>
+		<p>
+			<label for="mg_pwd_again">确认密码</label>
+			<input type="password" id="mg_pwd_again" name="mg_pwd_again" value="">
+			<span></span>
+		</p>
+		<p>
+			<label for="mg_header">更换头像</label>
+			<input type="file" id="mg_header" name="mg_header">
+		</p>
+		<p>
+			<input type="submit" id="submit" value="提　交">
+		</p>	
+	</form>
+</div>
+
+<include file="Public/footer"/>

@@ -1,0 +1,34 @@
+﻿#help{
+	width:1000px;
+	margin:auto;	
+}
+
+#help ul{
+	list-style:none;
+	margin-left:-40px;
+}
+
+#help ul li{
+	
+}
+
+#help ul li a{
+	display:block;
+	height:30px;
+	line-height:30px;
+	color:#333;
+	text-decoration:none;
+}
+
+#help ul li a:hover{
+	color:#19aa8d;		
+}
+
+img{
+	display:block;
+}
+
+p{
+	color:#333;
+	line-height:160%;	
+}

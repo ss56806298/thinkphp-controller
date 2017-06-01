@@ -1,0 +1,17 @@
+
+1:
+
+<script src="area/area.js"></script>
+
+
+2: 
+
+<select id="province" name="province"></select>
+<select id="city" name="city"></select>
+<select id="county" name="county"></select>
+
+
+3: 
+
+页面加载调用 setup()
+

@@ -1,0 +1,14 @@
+html{
+	height:100%;
+	width:100%;
+}
+body{
+	height:100%;
+	width:100%;
+	background:#16a085;
+	overflow:hidden;
+}
+canvas{
+	z-index:-1;
+	position:absolute;
+}

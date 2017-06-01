@@ -1,0 +1,47 @@
+﻿#save{
+	padding-top:30px;
+	padding-left:350px;
+	width:1400px;
+	overflow-x:auto;	
+}
+
+#save form{
+	height:400px;
+}
+
+#save form p{
+	height:40px;	
+}
+
+#save form p label{
+	display:inline-block;
+	color:#333;
+	font-size:14px;
+	width:60px;
+}
+
+#save form p input{
+	padding:3px 5px;
+}
+
+#save form p span{
+	color:#cc0000;
+	font-size:14px;
+}
+
+#save form p select{
+	width:100px;
+	padding:2px 3px;	
+}
+
+#save form p select option{
+	padding:2px 3px;	
+}
+
+#save form p:last-child input{
+	display:block;
+	width:120px;
+	padding:3px 0px;
+	margin-top:25px;
+	margin-left:50px;
+}

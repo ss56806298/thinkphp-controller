@@ -1,0 +1,35 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/monsterHaving.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/monsterHaving.js?{:time()}"></script>
+
+<div id="right">
+	<ul>
+		<li>编号</li>
+		<li>ID</li>
+		<li>名字</li>
+		<li>等级</li>
+		<li>经验值</li>
+		<li>生命值</li>	
+		<li>攻击力</li>
+		<li>防御力</li>	
+		<li>操作</li>
+	</ul>
+	<volist name="user_monsters" id="user_monster">
+		<ul>
+			<li>{$i}</li>
+			<li>{$user_monster.user_monster}</li>	
+			<li>{$user_monster.name}</li>	
+			<li>{$user_monster.level}</li>	
+			<li>{$user_monster.exp}</li>	
+			<li>{$user_monster.hp}</li>	
+			<li>{$user_monster.attack}</li>	
+			<li>{$user_monster.defense}</li>
+			<li><a href="javascript:;">删除</a></li>
+		</ul>
+	</volist>
+	<include file="Public/page"/>
+</div>
+
+<include file="Public/footer"/>

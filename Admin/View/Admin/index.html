@@ -1,0 +1,56 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/adminIndex.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/adminIndex.js?{:time()}"></script>
+
+<div id="admin" class="right">
+	<div>
+		<a href='{:U("add")}' class="btn btn-success">新 增</a>	
+		<a href="javascript:;" class="btn btn-info">启 用</a>	
+		<a href="javascript:;" class="btn btn-warning">锁 定</a>	
+		<a href="javascript:;" class="btn btn-danger">删 除</a>
+		<a href="javascript:;" class="btn btn-primary">移 动</a>
+		<select>
+			<option>请选择</option>
+			<foreach name="roles" item="vo">
+				<option value="{$vo.role_id}">{$vo.role_name}</option>
+			</foreach>
+		</select>
+	</div>
+	<ul>
+		<li><input type="checkbox"></li>
+		<li>ID</li>
+		<li>用户名</li>	
+		<li>真实姓名</li>	
+		<li>状态</li>	
+		<li>角色</li>	
+		<li>操作</li>	
+	</ul>
+	<volist name="managers" id="manager">
+		<ul>
+			<if condition="$manager.mg_islock eq 1">
+				<li><input type="checkbox"></li>
+				<li><span class="error">{$manager.mg_id}</span></li>	
+				<li><span class="error">{$manager.mg_name}</span></li>	
+				<li><span class="error">{$manager.mg_true_name}</span></li>
+				<li><span class="error">锁定</span></li>
+				<li><span class="error">{$manager.role_name}</span></li>	
+				<li><a href='{:U("save", array("mg_id" => $manager["mg_id"]))}' class="error">编辑</a></li>
+			<else />
+				<li><input type="checkbox"></li>
+				<li>{$manager.mg_id}</li>	
+				<li>{$manager.mg_name}</li>	
+				<li>{$manager.mg_true_name}</li>
+				<li>正常</li>
+				<li>{$manager.role_name}</li>	
+				<li><a href='{:U("save", array("mg_id" => $manager["mg_id"]))}'>编辑</a></li>
+			</if>
+		</ul>	
+	</volist>
+</div>
+<div id="page_tp">
+	{$page}
+</div>
+
+<include file="Public/footer"/>

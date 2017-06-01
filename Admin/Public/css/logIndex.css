@@ -1,0 +1,9 @@
+﻿#log{
+	padding-top:72px;
+	padding-left:350px;
+}
+
+#log p{
+	color:#333;
+	line-height:200%;	
+}

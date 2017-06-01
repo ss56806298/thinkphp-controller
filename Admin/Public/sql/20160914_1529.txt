@@ -1,0 +1,3 @@
+ALTER TABLE `res_accounts` DROP `acc_id`;
+
+ALTER TABLE `res_accounts` ADD PRIMARY KEY( `mg_id`, `account`, `server_num`, `os`);

@@ -1,0 +1,44 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/accountIndex.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/accountIndex.js?{:time()}"></script>
+
+<div id="right">
+	<div>
+		<a href='{:U("add")}' class="btn btn-success">新 增</a>	
+		<a href="javascript:;" class="btn btn-danger">删 除</a>
+	</div>
+	<ul>
+		<li><input type="checkbox"></li>
+		<li>账号</li>	
+		<li>渠道</li>	
+		<li>分区</li>	
+		<li>平台</li>
+		<li>userId</li>	
+		<li>操作</li>
+		<li>状态</li>
+	</ul>
+	<volist name="accounts" id="account">
+		<ul>
+			<li><input type="checkbox" value="{$account.id}"></li>
+			<li>{$account.account}</li>	
+			<li>{$account.platform}</li>	
+			<li>{$account.server_num} 区</li>
+			<li>{$account.os}</li>
+			<li>{$account.user_id|default="未知"}</li>
+			<if condition="$account.is_login eq 1">
+				<li><a href="javascript:;" id="{$account.id}">退出</a></li>
+				<li>已登录</li>
+			<else />
+				<li><a href="javascript:;" id="{$account.id}">登录</a></li>
+				<li></li>
+			</if>
+		</ul>
+	</volist>
+</div>
+<div id="page_tp">
+	{$page}
+</div>
+	
+<include file="Public/footer"/>

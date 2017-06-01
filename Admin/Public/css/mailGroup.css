@@ -1,0 +1,268 @@
+﻿#group{
+	
+}
+
+#group form{
+	height:640px;
+	width:700px;
+	float:left;
+}
+
+#group form>span{
+	display:block;
+	color:#cc0000;
+	font-size:15px;
+	margin-bottom:15px;
+}
+
+#group form p{
+	height:30px;
+	line-height:30px;
+	margin-bottom:10px;
+}
+
+#group form p label{
+	display:inline-block;
+	width:60px;
+	color:#333;
+	font-size:15px;	
+}
+
+#group form p input{
+	width:488px;
+	height:26px;
+	line-height:26px;
+	padding:3px;
+	color:#333;
+	font-size:15px;	
+}
+
+#group form p a{
+	width:80px;
+	color:#333;
+	font-size:15px;
+	text-decoration:none;
+}
+
+#group form p a:hover{
+	color:#1ab394;
+}
+
+#group form p span{
+	color:#333;
+	font-size:15px;		
+}
+
+#group form p:nth-of-type(1) select {
+	width:110px;
+	padding:2px 3px;
+	margin-right:10px;
+}
+
+#group form p:nth-of-type(1) select option {
+	padding:2px 3px;	
+}
+
+#group form p:nth-of-type(3){
+	height:170px;
+}
+
+#group form p:nth-of-type(3) label{
+	vertical-align:top;
+}
+
+#group form p:nth-of-type(3) a{
+	vertical-align:top;
+}
+
+#group form p:nth-of-type(3) textarea{
+	width:488px;
+	height:170px;
+	padding:5px;
+	color:#333;
+	font-size:14px;
+	font-family:"Microsoft YaHei";
+}
+
+#group form p:nth-of-type(5) input{
+	width:186px;
+	border:1px solid #ccc;	
+}
+
+#group form p:nth-of-type(5) input:nth-of-type(1){
+	display:inline-block;
+	margin-right:47px;	
+}
+
+#group form div{
+	display:none;
+}
+
+#group form div div{
+	width:66px;
+	color:#333;
+	font-size:15px;	
+	float:left;
+}
+
+#group form div ul{
+	list-style:none;
+}
+
+#group form div ul li{
+	height:25px;
+	color:#333;
+	font-size:15px;
+}
+
+#group form div ul li:last-child{
+	margin-bottom:20px;	
+}
+
+#group form div ul li span{
+	display:inline-block;
+	width:180px;
+}
+
+#group form>a{
+	display:inline-block;
+	width:200px;	
+	margin-left:180px;
+}
+
+#group form>input{
+	display:block;
+	width:120px;
+	padding:3px 0px;
+	margin-top:30px;
+	margin-left:230px;
+}
+
+#group .mould{
+	position:absolute;
+	top:80px;
+	left:300px;
+	z-index:11;
+	width:1000px;
+	height:700px;
+	background:#f3f3f4;
+	display:none;
+}
+
+#group .mould ul{
+	list-style:none;
+}
+
+#group .mould ul li{
+	margin-bottom:7px;
+}
+
+#group .mould ul li label{
+	color:#333;
+	font-size:14px;
+}
+
+#group .mould ul li label input{
+	display:inline-block;
+	margin-right:8px;	
+}
+
+#group .mould p{
+	display:block;
+	margin-top:15px;
+}
+
+#group .mould p a{
+	display:inline-block;
+	color:#333;
+	font-size:14px;
+	text-decoration:none;
+	margin-right:20px;
+}
+
+#group .mould p a:hover{
+	color:#00cc00;
+}
+
+#group #reward{
+	position:absolute;
+	top:80px;
+	left:300px;
+	z-index:99;
+	width:1200px;
+	height:700px;
+	background:#f3f3f4;
+	display:none;
+}
+
+#group #reward p{
+	clear:both;
+	color:#333;
+	font-size:15px;
+	padding-left:10px;
+}
+
+#group #reward ul{
+	list-style:none;
+	clear:both;
+}
+
+#group #reward ul li{
+	float:left;
+	color:#333;
+	font-size:14px;
+	width:110px;
+	height:25px;
+	cursor:pointer;
+}
+
+#group #reward ul li:hover{
+	color:#00cc00;	
+}
+
+#group #reward p:last-child{
+	border:none;
+	background:none;
+	padding-left:0px;
+	margin-top:20px;
+}
+
+#group #reward p:last-child label{
+	display:inline-block;
+	margin-right:18px;
+	margin-bottom:10px;
+	color:#333;
+	font-size:14px;
+}
+
+#group #reward p:last-child label input{
+	display:inline-block;
+	width:65px;
+	color:#333;
+	font-size:14px;
+	padding:2px 3px;
+	margin-left:8px;
+}
+
+#group #reward p:last-child a{
+	display:inline-block;
+	color:#333;
+	font-size:16px;
+	text-decoration:none;
+	float:right;
+	margin-left:20px;
+}
+
+#group #reward p:last-child a:hover{
+	color:#00cc00;
+}
+
+#group #result p.success{
+	color:#333;
+	font-size:15px;	
+}
+
+#group #result p.error{
+	color:#ff0000;
+	font-size:15px;	
+}

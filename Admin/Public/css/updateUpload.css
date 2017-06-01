@@ -1,0 +1,69 @@
+﻿#upload{
+	padding-top:72px;
+	padding-left:350px;
+}
+
+#upload form p{
+	width:400px;
+	height:50px;
+}
+
+#upload form p span{
+	display:inline-block;
+	width:100px;
+	color:#333;
+	font-size:15px;	
+}
+
+#upload form p:nth-of-type(1){
+		
+}
+
+#upload form p:nth-of-type(1) span{
+	width:50px;
+}
+
+#upload form p:nth-of-type(1) select{
+	width:110px;
+	margin-right:10px;
+}
+
+#upload form p:nth-of-type(1) select option{
+	padding:2px 5px;
+}
+
+#upload form p:nth-of-type(4){
+	padding-left:80px;
+}
+
+#upload form p:nth-of-type(4) input{
+	width:120px;
+	padding:3px 0px;
+}
+
+#upload div{
+	padding-top:30px;	
+}
+
+#upload div p{
+	height:40px;	
+}
+
+#upload div p span{
+	display:inline-block;
+	width:100px;
+	color:#333;
+	font-size:15px;
+}
+
+#upload div p:nth-of-type(1) span:nth-of-type(2){
+	color:#00cc00;	
+}
+
+#upload div p:nth-of-type(2) span:nth-of-type(2){
+	color:#00cc00;	
+}
+
+#upload #error p span:nth-of-type(2){
+	color:#ff0000;	
+}

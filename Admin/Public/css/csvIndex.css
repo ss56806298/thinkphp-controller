@@ -1,0 +1,68 @@
+﻿#csv form p{
+	height:40px;	
+}
+
+#csv form p span{
+	color:#ff0000;
+	font-size:15px;	
+}
+
+#csv form p label{
+	display:inline-block;
+	width:70px;
+	color:#333;
+	font-size:15px;	
+}
+
+#csv form p select{
+	width:115px;
+	padding:2px 3px;
+}
+
+#csv form p select option{
+	padding:2px 3px;
+}
+
+#csv form p:nth-of-type(5) input{
+	display:inline-block;
+	width:100px;
+	padding:2px 3px;
+	margin-top:20px;
+	margin-left:40px;
+}
+
+#csv div{
+	height:650px;
+	margin-top:50px;
+	overflow:auto;
+}
+
+#csv div p{
+	height:30px;
+	line-height:160%;	
+}
+
+#csv div p span{
+	display:inline-block;
+	color:#333;	
+}
+
+#csv div p span.error{
+	color:#ff0000;	
+}
+
+#csv div p span:nth-of-type(1){
+	width:300px;
+}
+
+#csv div p span:nth-of-type(2){
+	width:100px;
+}
+
+#csv div p span:nth-of-type(3){
+	width:100px;
+}
+
+#csv div p.green{
+	color:#00cc00;	
+}

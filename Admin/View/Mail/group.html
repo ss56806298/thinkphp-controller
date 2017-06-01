@@ -1,0 +1,122 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/mailGroup.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/mailGroup.js?{:time()}"></script>
+<script src="__PUBLIC__/datePicker/WdatePicker.js?{:time()}"></script>
+
+<div id="group" class="right">
+	<form action="__SELF__" method="post">
+		<if condition="$error eq 1">
+			<span>请选择渠道</span>
+		<elseif condition="$error eq 2"/>
+			<span>请选择分区</span>
+		<elseif condition="$error eq 3"/>
+			<span>标题不能为空</span>
+		<elseif condition="$error eq 4"/>
+			<span>内容不能为空</span>
+		<elseif condition="$error eq 5"/>
+			<span>署名不能为空</span>
+		<elseif condition="$error eq 6"/>
+			<span>开始时间不能为空</span>
+		<elseif condition="$error eq 7"/>
+			<span>结束时间不能为空</span>
+		<elseif condition="$error eq 8"/>
+			<span>开始时间不能大于等于结束时间</span>
+		<elseif condition="$error eq 9"/>
+			<span>奖励不能为空</span>
+		<elseif condition="$error eq 10"/>
+			<span>奖励不能超过 4 种</span>
+		</if>
+		<p>
+			<label for="platform">渠　道</label>
+			<select id="platform" name="platform">
+				<option value="0">请选择</option>
+				<volist name="platforms" id="vo">
+					<option value="{$vo}">{$vo}</option>
+				</volist>
+			</select>
+			<label for="server">分　区</label>
+			<select id="server" name="server">
+				<option value="0">请选择</option>	
+			</select>
+			<label for="os">平　台</label>
+			<select id="os" name="os">
+				<option value="1">全平台</option>
+				<option value="3">仅 Android</option>	
+				<option value="2">仅 ios</option>	
+			</select>
+		</p>
+		<p>
+			<label for="title">标　题</label>
+			<input id="title" name="title" value="每日封测奖励">
+			<a href="javascript:;">选 择 模 板</a>
+		</p>
+		<p>
+			<label for="message">内　容</label>
+			<textarea id="message" name="message">封测期间，每日赠送符石和扫荡券。快去召唤英雄吧~</textarea>
+			<a href="javascript:;">选 择 模 板</a>
+		</p>
+		<p>
+			<label for="sender">署　名</label>
+			<input id="sender" name="sender" readonly="readonly" value="《英雄连城》开发团队">
+			<a href="javascript:;">选 择 模 板</a>	
+		</p>
+		<p>
+			<label for="start">开　始</label>
+			<input id="start" name="start" class="Wdate">
+			<label for="end">结　束</label>
+			<input id="end" name="end" class="Wdate">
+		</p>
+		<div>
+			<div>奖　励</div>
+			<ul><li></li></ul>
+		</div>
+		<a href="javascript:;" class="btn btn-success" id="add_reward">添 加 奖 励</a>
+		<input type="submit" value="提　交">	
+	</form>
+	<div id="mould_title" class="mould">
+		<ul>
+			<volist name="titles" id="vo">
+				<li><label><input type="radio" name="title">{$vo.content}</label></li>
+			</volist>
+		</ul>
+		<p><a href="javascript:;">取消</a><a href="javascript:;" name="title">确定</a></p>
+	</div>
+	<div id="mould_message" class="mould">
+		<ul>
+			<volist name="messages" id="vo">
+				<li><label><input type="radio" name="message">{$vo.content}</label></li>
+			</volist>
+		</ul>
+		<p><a href="javascript:;">取消</a><a href="javascript:;" name="message">确定</a></p>
+	</div>
+	<div id="mould_sender" class="mould">
+		<ul>
+			<volist name="senders" id="vo">
+				<li><label><input type="radio" name="sender">{$vo.content}</label></li>
+			</volist>
+		</ul>
+		<p><a href="javascript:;">取消</a><a href="javascript:;" name="sender">确定</a></p>
+	</div>
+	<div id="reward">
+		<volist name="reward" id="vo">
+			<p>{$reward_name.$key.name}</p>
+			<ul>
+				<volist name="vo" id="v">
+					<li title="{$v.name}">{$key}</li>
+				</volist>
+			</ul>
+		</volist>
+		<p><a href="javascript:;">确定</a><a href="javascript:;">取消</a></p>
+	</div>
+	<div id="result">
+		<if condition="$result eq 1">
+			<p class="success">发送成功：{$platform} -- {$server} 区 -- {$os}</p>
+		<elseif condition="$result eq 2"/>
+			<p class="error">发送失败：{$platform} -- {$server} 区 -- {$os}</p>	
+		</if>	
+	</div>
+</div>
+
+<include file="Public/footer"/>

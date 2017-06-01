@@ -1,0 +1,80 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/updateUpload.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/updateUpload.js?{:time()}"></script>
+
+<div id="upload">
+	<form action="__SELF__" enctype="multipart/form-data" method="post">
+		<p>
+			<span>渠道：</span>
+			<select id="platforms" name="platforms">
+				<option>请选择</option>
+				<volist name="platforms" id="platform">
+					<option>{$platform}</option>	
+				</volist>
+			</select>
+			<span>平台：</span>
+			<select id="os" name="os">
+				<option>请选择</option>	
+			</select>
+		</p>		
+		<p>
+			<span>当前版本号：</span>
+			<span id="version">未知</span>
+		</p>
+		<p>
+			<span>上 传 资 源：</span>
+			<input type="file" name="res" id="file" disabled="disabled">
+		</p>
+		<p>
+			<input type="submit" value="提　交" id="submit" disabled="disabled">	
+		</p>
+	</form>
+	
+	<if condition="$is_post eq 1">
+		<div>
+			<p>
+				<span>状　态</span>
+				<span>上传成功</span>
+			</p>
+			<p>
+				<span>版 本 号</span>
+				<span>{$version}</span>	
+			</p>
+			<p>
+				<span>渠  道</span>
+				<span>{$plat}</span>
+			</p>
+			<p>
+				<span>平  台</span>
+				<span>{$os}</span>	
+			</p>
+			<p>
+				<span>资源名称</span>
+				<span>{$info.savename}</span>	
+			</p>
+			<p>
+				<span>资源大小</span>
+				<span>{$info.nice_size}</span>	
+			</p>
+			<p>
+				<span>上 传 者</span>
+				<span>{$Think.session.mg_true_name}</span>	
+			</p>
+		</div>
+	<elseif condition="$is_post eq 2"/>
+		<div id="error">
+			<p>
+				<span>状　态</span>
+				<span>上传失败</span>
+			</p>
+			<p>
+				<span>原　因</span>
+				<span>文件写入失败</span>
+			</p>	
+		</div>
+	</if>
+</div>
+
+<include file="Public/footer"/>

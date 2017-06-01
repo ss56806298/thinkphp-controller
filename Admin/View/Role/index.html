@@ -1,0 +1,58 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/roleIndex.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/roleIndex.js?{:time()}"></script>
+
+<div id="role" class="right">
+	<div>
+		<a href='{:U("add")}' class="btn btn-success">新 增</a>	
+		<a href="javascript:;" class="btn btn-info">启 用</a>
+		<a href="javascript:;" class="btn btn-warning">锁 定</a>
+		<a href="javascript:;" class="btn btn-danger">删 除</a>
+	</div>
+	<ul>
+		<li><input type="checkbox"></li>
+		<li>ID</li>	
+		<li>角色名</li>	
+		<li>状态</li>
+		<li>查看成员</li>	
+		<li>操作</li>
+	</ul>
+	
+	<volist name="roles" id="role">
+		<if condition="$role.state eq 0">
+			<ul>
+				<li><input type="checkbox"></li>
+				<li>{$role.role_id}</li>	
+				<li>{$role.role_name}</li>
+				<li>正常</li>
+				<li><a href='{:U("Admin/index", array("role_id" => $role["role_id"]))}'>角色成员</a></li>	
+				<li><a href='{:U("save", array("role_id" => $role["role_id"]))}'>编辑</a></li>	
+			</ul>
+		<elseif condition="$role.state eq 1"/>
+			<ul>
+				<li><input type="checkbox"></li>
+				<li class="state1">{$role.role_id}</li>	
+				<li class="state1">{$role.role_name}</li>
+				<li class="state1">锁定</li>
+				<li><a href='{:U("Admin/index", array("role_id" => $role["role_id"]))}' class="state1">角色成员</a></li>	
+				<li><a href='{:U("save", array("role_id" => $role["role_id"]))}' class="state1">编辑</a></li>	
+			</ul>
+		<else/>	
+			<ul>
+				<li><input type="checkbox"></li>
+				<li class="state2">{$role.role_id}</li>	
+				<li class="state2">{$role.role_name}</li>
+				<li class="state2">部分锁定</li>
+				<li><a href='{:U("Admin/index", array("role_id" => $role["role_id"]))}' class="state2">角色成员</a></li>	
+				<li><a href='{:U("save", array("role_id" => $role["role_id"]))}' class="state2">编辑</a></li>	
+			</ul>
+		</if>	
+	</volist>
+</div>
+<div id="page_tp">
+	{$page}	
+</div>
+
+<include file="Public/footer"/>

@@ -1,0 +1,38 @@
+﻿#user{
+	padding-top:72px;
+	padding-left:350px;
+	width:1400px;
+	overflow-x:auto;	
+}
+
+#user form{
+	height:400px;
+}
+
+#user form p{
+	height:40px;	
+}
+
+#user form p label{
+	display:inline-block;
+	color:#333;
+	font-size:14px;
+	width:60px;
+}
+
+#user form p input{
+	padding:3px 5px;
+}
+
+#user form p span{
+	color:#cc0000;
+	font-size:14px;
+}
+
+#user form p:last-child input{
+	display:block;
+	width:120px;
+	padding:3px 0px;
+	margin-top:25px;
+	margin-left:50px;
+}

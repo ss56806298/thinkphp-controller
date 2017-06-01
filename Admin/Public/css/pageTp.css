@@ -1,0 +1,28 @@
+﻿#page_tp{
+	padding-top:72px;
+	padding-left:350px;
+	width:1400px;
+	overflow-x:auto;
+}
+
+#page_tp div a, #page_tp div span{
+	display:inline-block;
+	color:#ffffff;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	border-radius:3px;
+	background:#7f9caf;
+	text-decoration:none;
+	margin-left:25px;
+	margin-bottom:20px;
+	text-align:center;
+}
+
+#page_tp div a:hover{
+	background:#3173f3;
+}
+
+#page_tp div span.current{
+	background:#3173f3;
+}

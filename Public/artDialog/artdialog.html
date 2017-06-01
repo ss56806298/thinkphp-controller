@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>artdialog</title>
+	<script src="js/sea.js"></script>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function (){
+			$("#test").on("click", function (){
+				seajs.config({
+					alias: {
+						"jquery": "jquery.js",
+						"dialog": "dialog.js"
+					}
+				});
+				
+				seajs.use('dialog', function (dialog) {
+					var d = dialog({
+						content: 'hello world'
+					});
+					
+					d.show();
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="test">test</button>
+</body>
+</html>

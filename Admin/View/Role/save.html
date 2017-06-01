@@ -1,0 +1,106 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/roleSave.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/roleSave.js?{:time()}"></script>
+
+<div id="save" class="right">
+	<form action="__SELF__" method="post">
+		<p>
+			<input type="hidden" name="role_id" value="{$role_id}">
+		</p>
+		<p>
+			<if condition="$tips eq 1">
+				<span class="error">操作失败，角色名不可以为空</span>
+			<elseif condition="$tips eq 2" />
+				<span class="error">操作失败，该角色名已存在</span>
+			</if>
+		</p>
+		<p>
+			<label for="role_name">角 色 名</label>
+			<input type="text" id="role_name" name="role_name" value="{$role_name}">
+			<span class="error"></span>
+		</p>
+		<fieldset>
+			<legend>选择角色权限</legend>
+			<volist name="powerss" id="power">
+				<ul>
+					<li>
+						<if condition="$power.checked eq 1">
+							<label>
+								<input type="checkbox" name="power[]" value="{$power.pow_id}" checked="checked">
+								{$power.pow_name}
+							</label>
+						<else />
+							<label>
+								<input type="checkbox" name="power[]" value="{$power.pow_id}">
+								{$power.pow_name}
+							</label>
+						</if>
+					</li>
+					<volist name="power['pow_child']" id="pow">
+						<li>
+							<if condition="$pow.checked eq 1">
+								<label>
+									<input type="checkbox" name="power[]" value="{$pow.pow_id}" checked="checked">
+									{$pow.pow_name}
+								</label>
+							<else />
+								<label>
+									<input type="checkbox" name="power[]" value="{$pow.pow_id}">
+									{$pow.pow_name}
+								</label>
+							</if>
+						</li>
+					</volist>
+				</ul>	
+			</volist>
+		</fieldset>	
+		<fieldset>
+			<legend>选择渠道权限</legend>
+			<ul>
+				<li>
+					<if condition="$checkedAll eq 1">
+						<label>
+							<input type="checkbox" checked="checked">
+							全部渠道
+						</label>
+					<else />
+						<label>
+							<input type="checkbox">
+							全部渠道
+						</label>
+					</if>
+				</li>
+				<volist name="platforms" id="vo">
+					<li>
+						<if condition="$vo['checked'] eq 1">
+							<label>
+								<input type="checkbox" name="platforms[]" value="{$vo.platform}" checked="checked">
+								{$vo.platform}	
+							</label>
+						<else />
+							<label>
+								<input type="checkbox" name="platforms[]" value="{$vo.platform}">
+								{$vo.platform}	
+							</label>
+						</if>
+					</li>
+				</volist>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>是否可以修改版本号</legend>
+			<if condition="$version_edit eq 1">
+				<label><input type="radio" name="version_edit" value="1" checked="checked"> 是</label>
+				<label><input type="radio" name="version_edit" value="0"> 否</label>	
+			<else />
+				<label><input type="radio" name="version_edit" value="1"> 是</label>
+				<label><input type="radio" name="version_edit" value="0" checked="checked"> 否</label>	
+			</if>
+		</fieldset>
+		<input type="submit" name="submit" id="submit" value="提　交">	
+	</form>
+</div>
+
+<include file="Public/footer"/>

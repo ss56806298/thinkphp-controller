@@ -1,0 +1,12 @@
+
+1:
+
+<script src="date/WdatePicker.js"></script>
+
+
+2:
+
+<input name="birth" id="birth" type="text" class="Wdate" onClick="WdatePicker()" size="15" style="border: #7f9db9 1px solid;" />
+<font style="color:#FF0000">*</font>
+
+

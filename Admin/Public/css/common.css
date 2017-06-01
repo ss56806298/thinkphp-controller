@@ -1,0 +1,61 @@
+﻿*{
+	margin:0px;
+	padding:0px;	
+}
+
+body{
+	background:#f3f3f4;	
+	font-family:"Microsoft YaHei";
+}
+
+.btn{
+	display:inline-block;
+	color:#fff;
+	font-size:15px;
+	font-weight:400;
+	width:50px;
+	line-height:1.4;
+	padding:6px 15px;
+	text-decoration:none;
+	border:medium none;
+	border-radius:4px;
+	transition:border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+	cursor:pointer;
+	text-align:center;
+	vertical-align:middle;	
+}
+
+.btn:hover{
+	opacity:0.7;	
+}
+
+.btn-primary{
+	background:#428bca;	
+}
+
+.btn-success{
+	background:#2ecc71;
+}
+
+.btn-info{
+	background:#3498db;
+}
+
+.btn-warning{
+	background:#f1c40f;
+}
+
+.btn-danger{
+	background:#e74c3c;
+}
+
+.right{
+	padding-top:72px;
+	padding-left:350px;
+	width:1400px;
+	overflow-x:auto;
+}
+
+.error{
+	color:#ff0000;	
+}

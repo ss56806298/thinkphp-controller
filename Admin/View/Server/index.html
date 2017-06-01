@@ -1,0 +1,24 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/versionIndex.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/versionIndex.js?{:time()}"></script>
+
+<div id="server" class="right">
+	<ul>
+		<li>渠道</li>	
+		<li>平台</li>	
+		<li>大版本号</li>	
+		<li>热更新版本号</li>	
+	</ul>
+	<volist name="platforms" id="vo">
+		<ul>
+			<li>{$vo.platform}</li>	
+			<li>{$vo.os}</li>
+			<li contenteditable="true" id="{$i - 1}">{$vo.version}</li>
+			<li>{$vo.updateVersion}</li>	
+		</ul>
+	</volist>
+</div>
+	
+<include file="Public/footer"/>

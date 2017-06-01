@@ -1,0 +1,17 @@
+[ 2017-05-31T16:39:26+08:00 ] ::1 /resource/index.php?m=Admin&c=Cdkey&a=index
+ERR: 1146:Table 'resource.res_platform_list' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `res_platform_list`
+
+[ 2017-05-31T16:40:02+08:00 ] ::1 /resource/index.php?m=Admin&c=Cdkey&a=index
+ERR: 1146:Table 'identity_manager.res_platform_list' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `identity_manager`.`res_platform_list`
+
+[ 2017-05-31T16:40:15+08:00 ] ::1 /resource/index.php?m=Admin&c=Cdkey&a=index
+ERR: Think\Model:getDataByAccount方法不存在！
+
+[ 2017-05-31T22:06:14+08:00 ] ::1 /resource/index.php?m=Admin&c=Cdkey&a=index
+ERR: 1.txt下载文件不存在！
+
+[ 2017-05-31T22:12:45+08:00 ] ::1 /resource/index.php?m=Admin&c=Cdkey&a=index
+ERR: ./Download/{$csvName}.csv下载文件不存在！
+

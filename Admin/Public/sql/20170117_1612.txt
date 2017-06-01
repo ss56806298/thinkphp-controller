@@ -1,0 +1,1 @@
+INSERT INTO `resource`.`res_powers` (`pow_id`, `pow_name`, `pow_pid`, `pow_ac`, `pow_sort`, `pow_isshow`) VALUES ('38', '°×Ãûµ¥', '1', 'Account/white', '103', '1');

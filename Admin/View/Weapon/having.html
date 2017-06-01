@@ -1,0 +1,33 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/weaponHaving.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/weaponHaving.js?{:time()}"></script>
+
+<div id="right">
+	<ul>
+		<li>编号</li>
+		<li>ID</li>
+		<li>名字</li>
+		<li>等级</li>
+		<li>经验值</li>
+		<li>攻击力</li>
+		<li>防御力</li>	
+		<li>操作</li>
+	</ul>
+	<volist name="user_arms" id="user_arm">
+		<ul>
+			<li>{$i}</li>
+			<li>{$user_arm.item_id}</li>	
+			<li>{$user_arm.name}</li>	
+			<li>{$user_arm.level}</li>	
+			<li>{$user_arm.exp}</li>	
+			<li>{$user_arm.attack}</li>	
+			<li>{$user_arm.defense}</li>
+			<li><a href="javascript:;">删除</a></li>
+		</ul>
+	</volist>
+	<include file="Public/page"/>
+</div>
+
+<include file="Public/footer"/>

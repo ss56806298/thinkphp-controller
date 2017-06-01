@@ -1,0 +1,37 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/dungeonIndex.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/dungeonIndex.js?{:time()}"></script>
+
+<div id="dungeon">
+	<form method="post" action="__SELF__">
+		<volist name="normal_dungeons" id="normal_dungeon">
+			<div>
+				<volist name="normal_dungeon" id="dungeon">
+					<div>
+						<label for="{$dungeon.id}">{$dungeon.name}</label>
+						<if condition="$dungeon.is_having eq 1">
+							<input type="checkbox" id="{$dungeon.id}" name="dungeon[]" value="{$dungeon.id}" checked="checked">
+						<else />
+							
+							<input type="checkbox" id="{$dungeon.id}" name="dungeon[]" value="{$dungeon.id}">
+						</if>
+					</div>
+				</volist>
+			</div>
+		</volist>
+		
+		<div>
+			<label>已选择 <span id="dungeon_num">{$dungeon_num}</span> 关</label>
+			<input type="checkbox" id="elite" name="elite" value="elite" checked="checked">
+			<label for="elite">添加相应的精英副本</label>
+			<input type="submit" value="提交">
+		</div>
+	</form>
+	<if condition="$is_post eq 1">
+		<span>已成功添加 {$dungeon_num} 条记录</span>
+	</if>
+</div>
+
+<include file="Public/footer"/>

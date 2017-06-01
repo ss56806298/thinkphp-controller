@@ -1,0 +1,52 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/masterInfo.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/masterInfo.js?{:time()}"></script>
+
+<div id="master">
+	<ul>
+		<li>昵称</li>	
+		<li id="nickname" contenteditable="true">{$game_master.nickname}</li>
+		<li>VIP 等级</li>	
+		<li id="vip_level" contenteditable="true">{$vip_level}</li>
+	</ul>
+	<ul>
+		<li>玩家等级</li>	
+		<li id="level" contenteditable="true">{$game_master.level}</li>
+		<li>经验值</li>	
+		<li id="exp">{$game_master.exp}</li>
+	</ul>
+	<ul>
+		<li>当前体力</li>	
+		<li id="stamina" contenteditable="true">{$game_master.stamina}</li>
+		<li>最大体力</li>	
+		<li id="max_stamina">{$game_master.max_stamina}</li>	
+	</ul>
+	<ul>
+		<li>符石</li>	
+		<li id="stone_free" contenteditable="true">{$game_master.stone_free}</li>
+		<li>金币</li>	
+		<li id="coin" contenteditable="true">{$game_master.coin}</li>	
+	</ul>
+	<ul>
+		<li>扫荡券</li>	
+		<li id="skip_ticket" contenteditable="true">{$game_master.skip_ticket}</li>
+		<li>生命值</li>	
+		<li id="hp">{$game_master.hp}</li>	
+	</ul>
+	<ul>
+		<li>攻击力</li>	
+		<li id="attack">{$game_master.attack}</li>
+		<li>防御力</li>	
+		<li id="defense">{$game_master.defense}</li>	
+	</ul>
+	<ul>
+		<li>天梯点</li>	
+		<li id="ladder_points" contenteditable="true">{$game_master.ladder_points}</li>
+		<li>公会币</li>	
+		<li id="girudo_coin" contenteditable="true">{$game_master.girudo_coin}</li>
+	</ul>
+</div>
+
+<include file="Public/footer"/>

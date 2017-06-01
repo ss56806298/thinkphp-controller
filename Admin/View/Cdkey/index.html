@@ -1,0 +1,112 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/cdkeyIndex.css?{:time()}"/>
+<script src="{$Think.ADMIN_PUBLIC}/js/cdkeyIndex.js?{:time()}"></script>
+
+<div id="cdkey" class="right">
+	<form action="__SELF__" method="post">
+		<if condition="$error eq 1">
+			<span>活动编号输入有误</span>
+		<elseif condition="$error eq 2"/>
+			<span>激活码生成数量输入有误</span>
+		<elseif condition="$error eq 3"/>
+			<span>使用次数输入有误</span>
+		<elseif condition="$error eq 4"/>
+			<span>时间输入有误</span>
+		<elseif condition="$error eq 5"/>
+			<span>奖励不能为空</span>
+		<elseif condition="$error eq 6"/>
+			<span>奖励不能超过 5 种</span>
+		</if>
+		<p>
+			<label for="event_id">活动编号</label>
+			<input id="event_id" name="event_id"></input>
+			<a>为空可以任意次参与</a>
+		</p>
+		<p>
+			<label for="event_comment">备注</label>
+			<input id="event_comment" name="event_comment"></input>
+		</p>
+		<p>
+			<label for="cdkey_number">生成数量</label>
+			<input id="cdkey_number" name="cdkey_number" value='0'></input>
+		</p>
+		<p>
+			<label for="platform">渠道</label>
+			<select id="platform" name="platform">
+				<option value="0">全渠道</option>
+				<volist name="platforms" id="vo">
+					<option value="{$vo}">{$vo}</option>
+				</volist>
+			</select>
+		</p>
+		<p>
+			<label for="remain_used_times">次数</label>
+			<input id="remain_used_times" name="remain_used_times" value = '0'></input>
+			<a>为0则代表无限使用</a>
+		</p>
+		<p>
+			<label for="start_time">开始时间</label>
+			<input id="start_time" name="start_time" value = '2017-01-11 00:00:00'></input>
+		</p>
+		<p>
+			<label for="end_time">结束时间</label>
+			<input id="end_time" name="end_time" value = '2017-01-11 00:00:00'></input>
+		</p>
+		<div>
+			<div>奖　励</div>
+			<ul><li></li></ul>
+		</div>
+		<a href="javascript:;" class="btn btn-success" id="add_reward">添 加 奖 励</a>
+		<input type="submit" value="提　交">	
+	</form>
+	<div id="mould_title" class="mould">
+		<ul>
+			<volist name="titles" id="vo">
+				<li><label><input type="radio" name="title">{$vo.content}</label></li>
+			</volist>
+		</ul>
+		<p><a href="javascript:;">取消</a><a href="javascript:;" name="title">确定</a></p>
+	</div>
+	<div id="mould_message" class="mould">
+		<ul>
+			<volist name="messages" id="vo">
+				<li><label><input type="radio" name="message">{$vo.content}</label></li>
+			</volist>
+		</ul>
+		<p><a href="javascript:;">取消</a><a href="javascript:;" name="message">确定</a></p>
+	</div>
+	<div id="mould_sender" class="mould">
+		<ul>
+			<volist name="senders" id="vo">
+				<li><label><input type="radio" name="sender">{$vo.content}</label></li>
+			</volist>
+		</ul>
+		<p><a href="javascript:;">取消</a><a href="javascript:;" name="sender">确定</a></p>
+	</div>
+	<div id="reward">
+		<volist name="reward" id="vo">
+			<p>{$reward_name.$key.name}</p>
+			<ul>
+				<volist name="vo" id="v">
+					<li title="{$v.name}">{$key}</li>
+				</volist>
+			</ul>
+		</volist>
+		<p><a href="javascript:;">确定</a><a href="javascript:;">取消</a></p>
+	</div>
+	<div id="result">
+		<volist name="result" id="vo">
+			<if condition="$vo['flag'] eq 0">
+				<p class="error"><span>{$vo.account}</span><span>{$platform}</span><span>{$server} 区</span><span>{$vo.os|default="全平台"}</span><span>未找到该账号</span></p>
+			<elseif condition="$vo['flag'] eq 2" />
+				<p class="error"><span>{$vo.account}</span><span>{$platform}</span><span>{$server} 区</span><span>{$vo.os|default="全平台"}</span><span>该账号存在于多个平台</span></p>
+			<else />
+				<p><span>{$vo.account}</span><span>{$platform}</span><span>{$server} 区</span><span>{$vo.os}</span><span>成功</span></p>
+			</if>
+		</volist>
+	</div>
+</div>
+	
+<include file="Public/footer"/>

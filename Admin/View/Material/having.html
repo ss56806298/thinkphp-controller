@@ -1,0 +1,29 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/materialAll.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/materialHaving.js?{:time()}"></script>
+
+<div id="right">
+	<ul>
+		<li>编号</li>
+		<li>ID</li>
+		<li>名字</li>
+		<li>类型</li>
+		<li>拥有量</li>	
+		<li>最大拥有量</li>
+	</ul>
+	<volist name="materials" id="material">
+		<ul>
+			<li>{$i}</li>
+			<li>{$material.id}</li>	
+			<li>{$material.name}</li>	
+			<li>{$material.type}</li>	
+			<li contenteditable="true">{$material.num}</li>	
+			<li>999</li>
+		</ul>
+	</volist>
+	<include file="Public/page"/>
+</div>
+
+<include file="Public/footer"/>

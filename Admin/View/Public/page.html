@@ -1,0 +1,9 @@
+﻿<div id="page">
+	<for start="0" end="$pageNum">
+		<if condition="$i eq $page">
+			<a href={:U("", array("page" => $i))} class="page_active">{$i+1}</a>
+		<else />
+			<a href={:U("", array("page" => $i))}>{$i+1}</a>
+		</if>
+	</for>
+</div>

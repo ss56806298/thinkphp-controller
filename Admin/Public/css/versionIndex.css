@@ -1,0 +1,15 @@
+﻿#version{
+	height:500px;
+}
+
+#version ul{
+	list-style:none;
+	clear:both;
+}
+
+#version ul li{
+	float:left;	
+	width:200px;
+	height:40px;
+	line-height:40px;
+}

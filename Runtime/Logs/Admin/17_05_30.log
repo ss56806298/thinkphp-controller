@@ -1,0 +1,124 @@
+[ 2017-05-30T14:47:17+08:00 ] ::1 /resource/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2017-05-30T14:47:46+08:00 ] ::1 /resource/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+
+[ 2017-05-30T14:47:47+08:00 ] ::1 /resource/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+
+[ 2017-05-30T15:26:58+08:00 ] ::1 /resource/index.php?m=Admin&c=Account&a=add
+ERR: 1364:Field 'platform' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `res_accounts` (`mg_id`,`account`,`server_num`,`os`,`open_id`) VALUES ('6','emiria','4','ios','qH9z6wy2DWbZboYEDRev')
+
+[ 2017-05-30T15:30:10+08:00 ] ::1 /resource/index.php?m=Admin&c=Account&a=delete&ids%5B%5D=3&ids%5B%5D=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+SQL: SHOW COLUMNS FROM `res_managers` [ RunTime:0.0006s ]
+SQL: SELECT `role_id` FROM `res_managers` WHERE `mg_id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `res_roles` [ RunTime:0.0005s ]
+SQL: SELECT `pow_ac` FROM `res_roles` WHERE `role_id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `res_managers` WHERE `mg_id` = 6 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `pow_ids` FROM `res_roles` WHERE `role_id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `res_powers` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 12 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 38 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 14 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 15 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 19 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 20 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 21 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 22 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 23 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 37 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 32 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 34 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 35 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 36 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 24 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 25 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 26 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 29 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 31 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 30 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 28 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `res_accounts` [ RunTime:0.0013s ]
+SQL: DELETE FROM `res_accounts` WHERE `id` = 3 [ RunTime:0.0528s ]
+SQL: DELETE FROM `res_accounts` WHERE `id` = 4 [ RunTime:0.0545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000776s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2017-05-30T15:33:32+08:00 ] ::1 /resource/index.php?m=Admin&c=Account&a=delete&ids%5B%5D=5&ids%5B%5D=6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `res_managers` [ RunTime:0.0005s ]
+SQL: SELECT `role_id` FROM `res_managers` WHERE `mg_id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `res_roles` [ RunTime:0.0004s ]
+SQL: SELECT `pow_ac` FROM `res_roles` WHERE `role_id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `res_managers` WHERE `mg_id` = 6 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `pow_ids` FROM `res_roles` WHERE `role_id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `res_powers` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 12 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 38 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 14 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 15 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 19 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 20 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 21 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 7 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 22 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 9 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 37 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 32 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 34 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 35 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 36 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 24 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 25 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 26 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 29 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 33 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 31 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 30 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `res_powers` WHERE `pow_id` = 28 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `res_accounts` [ RunTime:0.0012s ]
+SQL: DELETE FROM `res_accounts` WHERE `id` = 5 [ RunTime:0.0481s ]
+SQL: DELETE FROM `res_accounts` WHERE `id` = 6 [ RunTime:0.0358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002339s ]
+
+[ 2017-05-30T15:41:54+08:00 ] ::1 /resource/index.php?m=Admin&c=Mail&a=index
+ERR: Redis server went away
+

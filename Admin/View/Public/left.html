@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>影力网络</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="__PUBLIC__/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="__PUBLIC__/jquery.ui/jquery.ui.css">
+	<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/common.css?{:time()}">
+	<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/header.css?{:time()}">
+	<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/left.css?{:time()}">
+	<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/right.css?{:time()}">
+	<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/pageTp.css?{:time()}">
+
+	<script src="__PUBLIC__/jquery/jquery.min.js"></script>
+	<script src="__PUBLIC__/artDialog/js/sea.js"></script>
+	<script src="__PUBLIC__/jquery.ui/jquery.ui.js"></script>
+	<script src="{$Think.ADMIN_PUBLIC}/js/header.js?{:time()}"></script>
+	<script src="{$Think.ADMIN_PUBLIC}/js/left.js?{:time()}"></script>
+</head>
+<body>
+	<div id="left">
+		<div id="info">
+			<img src="{$Think.session.mg_header}">
+			<div>
+				<div>
+					<span>真实姓名</span>
+					<span>{$Think.session.mg_true_name}</span>
+				</div>
+				<div>
+					<span>当前账号</span>
+					<if condition="$Think.session.account eq -1">
+						<span id="account">未选择</span>
+					<else />
+						<span id="account">{$Think.session.account}</span>	
+					</if>
+				</div>
+				<div>
+					<span>当前分区</span>
+					<if condition="$Think.session.server_num eq -1">
+						<span id="server_num">未选择</span>
+					<else />
+						<span id="server_num">{$Think.session.server_num} 区</span>	
+					</if>
+				</div>
+				<div>
+					<span>操　　作</span>
+					<a href="#">安全退出</a>
+				</div>
+			</div>
+		</div>
+		<div id="menu">
+			<volist name="powers" id="power">
+				<div>
+					<in name="power.pow_id" value="11">
+						<a href="{$power.pow_ac|U}" target="_blank">{$power.pow_name}<i class="fa fa-angle-left"></i></a>
+					<else/>
+						<a href="{$power.pow_ac|U}">{$power.pow_name}<i class="fa fa-angle-left"></i></a>
+					</in>
+					<ul>
+						<volist name="power.pow_child" id="child">
+							<if condition="$child.pow_isshow eq 1">
+								<li><a href="{$child.pow_ac|U}">{$child.pow_name}</a></li>
+							<else />
+								<li><a href="{$child.pow_ac|U}" class="hidden">{$child.pow_name}</a></li>
+							</if>								
+						</volist>	
+					</ul>
+				</div>	
+			</volist>
+		</div>
+	</div>

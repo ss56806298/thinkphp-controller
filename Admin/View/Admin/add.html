@@ -1,0 +1,55 @@
+﻿<include file="Public/left"/>
+<include file="Public/header"/>
+	
+<link rel="stylesheet" href="{$Think.ADMIN_PUBLIC}/css/adminAdd.css?{:time()}">
+<script src="{$Think.ADMIN_PUBLIC}/js/adminAdd.js?{:time()}"></script>
+
+<div id="add" class="right">
+	<form action="__SELF__" method="post">
+		<p>
+			<if condition="$tips eq 1">
+				<span>操作失败，真实姓名不能为空</span>
+			<elseif condition="$tips eq 2" />
+				<span>操作失败，用户名不能为空</span>
+			<elseif condition="$tips eq 3"/>
+				<span>操作失败，用户名已存在</span>
+			<elseif condition="$tips eq 4"/>
+				<span>操作失败，密码不能为空</span>
+			<elseif condition="$tips eq 5"/>
+				<span>操作失败，两次输入的密码不一致</span>
+			</if>
+		</p>
+		<p>
+			<label for="mg_true_name">真实姓名</label>
+			<input type="text" id="mg_true_name" name="mg_true_name">
+		</p>
+		<p>
+			<label for="mg_name">用 户 名</label>
+			<input type="text" id="mg_name" name="mg_name" value=" ">
+			<span></span>
+		</p>
+		<p>
+			<label for="mg_pwd">密　　码</label>
+			<input type="password" id="mg_pwd" name="mg_pwd">
+			<span></span>
+		</p>
+		<p>
+			<label for="mg_pwd_again">确认密码</label>
+			<input type="password" id="mg_pwd_again" name="mg_pwd_again">
+			<span></span>
+		</p>
+		<p>
+			<label for="role">选择角色</label>
+			<select id="role" name="role">
+				<volist name="roles" id="role">
+					<option value="{$role.role_id}">{$role.role_name}</option>	
+				</volist>	
+			</select>	
+		</p>
+		<p>
+			<input type="submit" id="submit" value="提交">
+		</p>
+	</form>
+</div>
+	
+<include file="Public/footer"/>

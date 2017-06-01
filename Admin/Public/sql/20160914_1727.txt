@@ -1,0 +1,1 @@
+ALTER TABLE `res_accounts` ADD `user_id` BIGINT UNSIGNED NULL DEFAULT NULL COMMENT '”√ªß ID' AFTER `os`, ADD INDEX (`user_id`) ;

@@ -1,0 +1,53 @@
+﻿#header{
+	position:fixed;
+	top:0px;
+	left:220px;
+	width:100%;
+	height:72px;
+	background:#f3f3f4;
+	border-bottom:2px solid #2f4050;
+}
+#header div{
+	padding-top:20px;
+	padding-left:30px;
+}
+#header div button{
+	width:45px;
+	height:32px;
+	line-height:32px;
+	background:#1ab394;
+	border-radius:3px;
+	border:none;
+	cursor:pointer;
+}
+#header div button i{
+	color:#ffffff;
+	font-size:18px;
+}
+#header div input{
+	width:300px;
+	height:32px;
+	line-height:32px;
+	text-indent:15px;
+	border:none;
+	background:#f3f3f4;
+	font-size:15px;
+}
+
+#ui-id-1{
+	width:80px;
+	max-height:600px;
+	background:#f3f3f4;
+	border:1px solid #ccc;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+#ui-id-1 li a{
+	font-size:15px;	
+}
+
+#ui-id-1 li a:hover{
+	background:#ccc;
+	border:1px solid #ccc;	
+}
