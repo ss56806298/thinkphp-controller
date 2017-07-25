@@ -12,7 +12,18 @@ class PlatformListModel extends Model{
 		$where = array(
 		);
 
-		return $this->where($where)->getField('platform', true);;
+		return $this->where($where)->getField('platform', true);
 
+	}
+
+	/**
+	* 根据平台获取渠道组 
+	*/
+	public function getAreaByPlatform($platform) {
+		$where = array(
+			'platform' => $platform
+		);
+
+		return $this->where($where)->getField('area', true);
 	}
 }

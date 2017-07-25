@@ -16,13 +16,13 @@
 			parent::__construct();
 			
 			// 初始化操作，相关的常量见 index.php
-			$this->_configName = RES_CONFIG_PATH."/".RES_CONFIG_NAME;
-			$this->_config = require($this->_configName);
-			$this->_template = file_get_contents(TEMPLATE_PATH . "/template.php");
-			
-			foreach ($this->_config->platform as $key => $value){
-				$this->_platforms[] = $key;
-				$this->_path[$key] = $key . "/";
+			// $this->_configName = RES_CONFIG_PATH."/".RES_CONFIG_NAME;
+			// $this->_config = require($this->_configName);
+			// $this->_template = file_get_contents(TEMPLATE_PATH . "/template.php");
+			$platforms = D("PlatformList")->getAllPlatformList();
+			foreach ($platforms as $k => $v){
+				$this->_platforms[] = $v;
+				// $this->_path[$key] = $key . "/";
 			}
 		}
 		
@@ -55,14 +55,14 @@
 				}
 				
 				// 老版本号，数组
-				$oldVersion = explode(".", $this->_config->platform->$platforms->$os->version);
-				// 新版本号，数组
+				// $oldVersion = explode(".", $this->_config->platform->$platforms->$os->version);
+				// // 新版本号，数组
 				$newVersion = explode(".", substr(substr($info["savename"], strlen(RES_FREFIX) + 1), 0, strlen($str) - strlen(".zip")));
-				// 如果老版本号和新版本号前三位不一致，给出错误提示
-				if($oldVersion[0] != $newVersion[0] || $oldVersion[1] != $newVersion[1] || $oldVersion[2] != $newVersion[2]){
-					$this->error("热更新失败，大版本号不一致");
-					return;
-				}
+				// // 如果老版本号和新版本号前三位不一致，给出错误提示
+				// if($oldVersion[0] != $newVersion[0] || $oldVersion[1] != $newVersion[1] || $oldVersion[2] != $newVersion[2]){
+				// 	$this->error("热更新失败，大版本号不一致");
+				// 	return;
+				// }
 				
 				// 转换 size
 				if($info["size"] < 1024){
@@ -80,7 +80,11 @@
 				
 				// 将压缩包拷贝到相应目录
 				$file1 = UPLOAD_PATH_S . $info["savename"];
-				$file2Path = RES_PATH_S . $this->_path[trim(I("platforms"))];
+			
+				//获取渠道组
+				$area = reset(D("PlatformList")->getAreaByPlatform($platforms));
+
+				$file2Path = RES_PATH_S . $area . '/';
 				$file2 = $file2Path . $info["savename"];
 				$copy = copy($file1, $file2);
 				if($copy !== true){
@@ -113,33 +117,36 @@
 					return;
 				}
 				
-				// 将新的版本号赋值给现在的渠道和平台
-				$this->_config->platform->$platforms->$os->version = implode(".", $newVersion);
+				// // 将新的版本号赋值给现在的渠道和平台
+				// $this->_config->platform->$platforms->$os->version = implode(".", $newVersion);
+
+				//将新的版本号赋值给渠道组
+				D("AreaList")->updateAreaVersion($area, implode(".", $newVersion));
 				
-				// 将版本号替换到相应的模板中
-				foreach ($this->_config->platform as $key => $value){
-					foreach ($value as $k => $v){
-						$replace = "<{" . $key . "+" . $k . "}>";
-						$this->_template = str_replace($replace, $v->version, $this->_template);
-					}	
-				}
+				// // 将版本号替换到相应的模板中
+				// foreach ($this->_config->platform as $key => $value){
+				// 	foreach ($value as $k => $v){
+				// 		$replace = "<{" . $key . "+" . $k . "}>";
+				// 		$this->_template = str_replace($replace, $v->version, $this->_template);
+				// 	}	
+				// }
 				// 将模板文件填充到配置文件当中
-				$res = file_put_contents($this->_configName, $this->_template);
+				// $res = file_put_contents($this->_configName, $this->_template);
 				
-				if($res === false){
-					$this->assign("is_post", 2);	
+				// if($res === false){
+				// 	$this->assign("is_post", 2);	
 					
-					$this->logsInfo .= ", 文件写入失败";
-				}else{
+				// 	$this->logsInfo .= ", 文件写入失败";
+				// }else{
 					$this->assign("is_post", 1);
 					$this->assign("info", $info);
 					$this->assign("version", implode(".", $newVersion));
 					$this->assign("plat", $platforms);
-					$this->assign("os", $os);
+					$this->assign("area", $area);
 					
 					$this->logsInfo .= ", " . $info["savename"];
 					$this->logsState = 1;
-				}
+				// }
 				
 				$this->assign("platforms", $this->_platforms);
 				$this->display();
@@ -158,7 +165,8 @@
 				return ;	
 			}
 			
-			foreach ($this->_config->platform->$platform as $key => $value){
+			$platforms = D("PlatformList")->getAllPlatformList();
+			foreach ($platforms as $k => $v){
 				$os[] = $key;	
 			}
 			
