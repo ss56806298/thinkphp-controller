@@ -7,8 +7,8 @@ return array(
 	'DB_NAME'			=> 'resource',
 	'DB_PREFIX'			=> 'res_',
 	
-	// ÒÔÏÂÊÇÊý¾Ý¿âµÄÅäÖÃÎÄ¼þ£¬·ÖÇþµÀºÍÇø
-	// ÈôÒªÌí¼ÓÐÂµÄÇþµÀ»òÇø£¬ÐèÌí¼ÓÐÂµÄÅäÖÃ
+	// ä»¥ä¸‹æ˜¯æ•°æ®åº“çš„é…ç½®æ–‡ä»¶ï¼Œåˆ†æ¸ é“å’ŒåŒº
+	// è‹¥è¦æ·»åŠ æ–°çš„æ¸ é“æˆ–åŒºï¼Œéœ€æ·»åŠ æ–°çš„é…ç½®
 	'DB_100'	=> array(
 			'DB_TYPE'	=> 'mysql',
 			'DB_HOST'	=> '106.75.20.232',
@@ -16,6 +16,13 @@ return array(
 			'DB_PWD'	=> 'Misaka!',
 			'DB_NAME'	=> 'the_wall_001',
 			'DB_SUFFIX'	=> '_001',
+	),
+	'DB_100_GDB'	=> array(
+			'DB_TYPE'	=> 'mysql',
+			'DB_HOST'	=> '106.75.20.232',
+			'DB_USER'	=> 'root',
+			'DB_PWD'	=> 'Misaka!',
+			'DB_NAME'	=> 'the_wall_gdb'
 	),
 	'DB_SHADOWPOWER_4'	=> array(
 			'DB_TYPE'	=> 'mysql',
@@ -102,11 +109,11 @@ return array(
 			'DB_NAME'	=> 'yxlc_ypw_gdb'
 	),
 	
-	'URL_MODEL'			=> 0,				// URL Ä£Ê½
-	'SHOW_PAGE_TRACE'	=> true,			// ÏÔÊ¾Ò³Ãæ×·×ÙÐÅÏ¢
-	'ACTION_SUFFIX'		=> 'Action',		// ²Ù×÷·½·¨µÄºó×º
-	'DEFAULT_MODULE'        =>  'Admin',	// Ä¬ÈÏµÄÄ£¿é
-    'DEFAULT_CONTROLLER'    =>  'Manager',	// Ä¬ÈÏµÄ¿ØÖÆÆ÷
-    'DEFAULT_ACTION'        =>  'login',	// Ä¬ÈÏµÄ²Ù×÷·½·¨
-    'PWD_SUFFIX'		=> 'zm',			// ÃÜÂëµÄÇ°×º
+	'URL_MODEL'			=> 0,				// URL æ¨¡å¼
+	'SHOW_PAGE_TRACE'	=> true,			// æ˜¾ç¤ºé¡µé¢è¿½è¸ªä¿¡æ¯
+	'ACTION_SUFFIX'		=> 'Action',		// æ“ä½œæ–¹æ³•çš„åŽç¼€
+	'DEFAULT_MODULE'        =>  'Admin',	// é»˜è®¤çš„æ¨¡å—
+    'DEFAULT_CONTROLLER'    =>  'Manager',	// é»˜è®¤çš„æŽ§åˆ¶å™¨
+    'DEFAULT_ACTION'        =>  'login',	// é»˜è®¤çš„æ“ä½œæ–¹æ³•
+    'PWD_SUFFIX'		=> 'zm',			// å¯†ç çš„å‰ç¼€
 );

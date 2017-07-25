@@ -58,175 +58,175 @@
 		/*
 		* 个人邮件
 		*/
-		public function indexAction (){
-			if(IS_POST){
-				$accounts = trim(I("accounts"));	// 账号
-				$platform = trim(I("platform"));	// 渠道
-				$server = (int)trim(I("server"));	// 分区
-				$os = trim(I("os"));				// 平台
-				$title = trim(I("title"));			// 标题
-				$message = trim(I("message"));		// 内容
-				$sender = trim(I("sender"));		// 署名
-				$expiry = trim(I("expiry"));		// 有效期
-				$itemIds = I("item_ids");			// 奖励的 IDs
-				$itemNums = I("item_nums");			// 奖励的数量
+		// public function indexAction (){
+		// 	if(IS_POST){
+		// 		$accounts = trim(I("accounts"));	// 账号
+		// 		$platform = trim(I("platform"));	// 渠道
+		// 		$server = (int)trim(I("server"));	// 分区
+		// 		$os = trim(I("os"));				// 平台
+		// 		$title = trim(I("title"));			// 标题
+		// 		$message = trim(I("message"));		// 内容
+		// 		$sender = trim(I("sender"));		// 署名
+		// 		$expiry = trim(I("expiry"));		// 有效期
+		// 		$itemIds = I("item_ids");			// 奖励的 IDs
+		// 		$itemNums = I("item_nums");			// 奖励的数量
 				
-				$this->logsInfo = $accounts . $this->logsSep . $platform . ", " . $server . ", " . $os . ", " . $title . ", " . $message . ", " . $sender . ", " . $expiry . $this->logsSep . implode(", ", $itemIds) . $this->logsSep . implode(", ", $itemNums);
+		// 		$this->logsInfo = $accounts . $this->logsSep . $platform . ", " . $server . ", " . $os . ", " . $title . ", " . $message . ", " . $sender . ", " . $expiry . $this->logsSep . implode(", ", $itemIds) . $this->logsSep . implode(", ", $itemNums);
 				
-				// 账号为空，给出错误提示
-				if($accounts == ""){
-					$this->assign("error", 1);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 账号为空，给出错误提示
+		// 		if($accounts == ""){
+		// 			$this->assign("error", 1);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 没有选择渠道，给出错误提示
-				if($platform === "0"){
-					$this->assign("error", 2);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 没有选择渠道，给出错误提示
+		// 		if($platform === "0"){
+		// 			$this->assign("error", 2);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 没有选择分区，给出错误提示
-				if($server === 0){
-					$this->assign("error", 3);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 没有选择分区，给出错误提示
+		// 		if($server === 0){
+		// 			$this->assign("error", 3);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 标题为空，给出错误提示
-				if($title == ""){
-					$this->assign("error", 4);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 标题为空，给出错误提示
+		// 		if($title == ""){
+		// 			$this->assign("error", 4);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 内容为空，给出错误提示
-				if($message == ""){
-					$this->assign("error", 5);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 内容为空，给出错误提示
+		// 		if($message == ""){
+		// 			$this->assign("error", 5);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 署名为空，给出错误提示
-				if($sender == ""){
-					$this->assign("error", 6);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 署名为空，给出错误提示
+		// 		if($sender == ""){
+		// 			$this->assign("error", 6);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 有效期为空，给出错误提示
-				if($expiry == ""){
-					$this->assign("error", 7);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 有效期为空，给出错误提示
+		// 		if($expiry == ""){
+		// 			$this->assign("error", 7);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 奖励为空，给出错误提示
-				if($itemIds == ""){
-					$this->assign("error", 8);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 奖励为空，给出错误提示
+		// 		if($itemIds == ""){
+		// 			$this->assign("error", 8);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 				
-				// 奖励种类超过 4 中，给出错误提示
-				if(count($itemIds) > 4){
-					$this->assign("error", 9);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+		// 		// 奖励种类超过 4 中，给出错误提示
+		// 		if(count($itemIds) > 4){
+		// 			$this->assign("error", 9);
+		// 			$this->_assign();
+		// 			$this->display();
+		// 			return;
+		// 		}
 
-				// 数据库相关准备工作
-				$conf = "DB_" . strtoupper($platform) . "_" . $server;
-				$this->_db = M()->db($server, $conf);
-				foreach ($this->_table as $k => &$v){
-					$v .= C($conf)["DB_SUFFIX"];
-				}
+		// 		// 数据库相关准备工作
+		// 		$conf = "DB_" . strtoupper($platform) . "_" . $server;
+		// 		$this->_db = M()->db($server, $conf);
+		// 		foreach ($this->_table as $k => &$v){
+		// 			$v .= C($conf)["DB_SUFFIX"];
+		// 		}
 				
-				// 得到账号数组
-				$accountsArr = explode(",", $accounts);
-				array_pop($accountsArr);
+		// 		// 得到账号数组
+		// 		$accountsArr = explode(",", $accounts);
+		// 		array_pop($accountsArr);
 				
-				$result = [];	// 失败的账号
-				foreach ($accountsArr as $key => $value){
-					$account = trim($value);
-					$accountId = D("UserAccountManager")->getIdByAccountAndPlatform($account, $platform);
-					list($openId, $osRes, $flag) = D("UserRegisterInfo")->getOpenId($accountId, $platform, $server, $os);
+		// 		$result = [];	// 失败的账号
+		// 		foreach ($accountsArr as $key => $value){
+		// 			$account = trim($value);
+		// 			$accountId = D("UserAccountManager")->getIdByAccountAndPlatform($account, $platform);
+		// 			list($openId, $osRes, $flag) = D("UserRegisterInfo")->getOpenId($accountId, $platform, $server, $os);
 					
-					$result[] = array(
-						"account"	=> $account,
-						"os"		=> $osRes,
-						"flag"		=> $flag
-					);
+		// 			$result[] = array(
+		// 				"account"	=> $account,
+		// 				"os"		=> $osRes,
+		// 				"flag"		=> $flag
+		// 			);
 					
-					if(is_null($openId)){
-						continue;	
-					}
+		// 			if(is_null($openId)){
+		// 				continue;	
+		// 			}
 					
-					$where = array(
-						"open_id"	=> $openId
-					);
-					$userId = $this->_db->table($this->_table["user_master"])->where($where)->getField("user_id");
+		// 			$where = array(
+		// 				"open_id"	=> $openId
+		// 			);
+		// 			$userId = $this->_db->table($this->_table["user_master"])->where($where)->getField("user_id");
 					
-					$where = array(
-						"user_id"	=> $userId
-					);
-					$userMailId = $this->_db->table($this->_table["user_mail_list"])->where($where)->count();
+		// 			$where = array(
+		// 				"user_id"	=> $userId
+		// 			);
+		// 			$userMailId = $this->_db->table($this->_table["user_mail_list"])->where($where)->count();
 					
-					list($title_id, $title_text, $message_id, $message_text, $sender_id, $item1_id, $item1_num, $item2_id, $item2_num, $item3_id, $item3_num, $item4_id, $item4_num) = $this->_operData($title, $message, $sender, $itemIds, $itemNums);
+		// 			list($title_id, $title_text, $message_id, $message_text, $sender_id, $item1_id, $item1_num, $item2_id, $item2_num, $item3_id, $item3_num, $item4_id, $item4_num) = $this->_operData($title, $message, $sender, $itemIds, $itemNums);
 					
-					$data = array(
-						"user_id"			=> (int)$userId,
-						"user_mail_id"		=> (int)$userMailId,
-						"state"				=> 0,
-						"title_id"			=> $title_id,
-						"title_text"		=> $title_text,
-						"message_id"		=> $message_id,
-						"message_text"		=> $message_text,
-						"message_replace"	=> null,
-						"sender_id"			=> (int)$sender_id,
-						"item1_id"			=> $item1_id,
-						"item1_num"			=> $item1_num,
-						"item2_id"			=> $item2_id,
-						"item2_num"			=> $item2_num,
-						"item3_id"			=> $item3_id,
-						"item3_num"			=> $item3_num,
-						"item4_id"			=> $item4_id,
-						"item4_num"			=> $item4_num,
-						"expiry_date"		=> (int)$expiry,
-						"create_time"		=> date("Y-m-d H:i:s"),
-						"update_time"		=> date("Y-m-d H:i:s"),
-					);
+		// 			$data = array(
+		// 				"user_id"			=> (int)$userId,
+		// 				"user_mail_id"		=> (int)$userMailId,
+		// 				"state"				=> 0,
+		// 				"title_id"			=> $title_id,
+		// 				"title_text"		=> $title_text,
+		// 				"message_id"		=> $message_id,
+		// 				"message_text"		=> $message_text,
+		// 				"message_replace"	=> null,
+		// 				"sender_id"			=> (int)$sender_id,
+		// 				"item1_id"			=> $item1_id,
+		// 				"item1_num"			=> $item1_num,
+		// 				"item2_id"			=> $item2_id,
+		// 				"item2_num"			=> $item2_num,
+		// 				"item3_id"			=> $item3_id,
+		// 				"item3_num"			=> $item3_num,
+		// 				"item4_id"			=> $item4_id,
+		// 				"item4_num"			=> $item4_num,
+		// 				"expiry_date"		=> (int)$expiry,
+		// 				"create_time"		=> date("Y-m-d H:i:s"),
+		// 				"update_time"		=> date("Y-m-d H:i:s"),
+		// 			);
 					
-					$this->_db->table($this->_table["user_mail_list"])->add($data);
-				}
+		// 			$this->_db->table($this->_table["user_mail_list"])->add($data);
+		// 		}
 				
-				$this->logsState = 1;
+		// 		$this->logsState = 1;
 				
-				$this->assign("result", $result);
-				$this->assign("platform", $platform);
-				$this->assign("server", $server);
-			}
+		// 		$this->assign("result", $result);
+		// 		$this->assign("platform", $platform);
+		// 		$this->assign("server", $server);
+		// 	}
 
-			$this->_assign();
-			$this->display();	
-		}
+		// 	$this->_assign();
+		// 	$this->display();	
+		// }
 		
 		/*
 		* 群发邮件
 		*/
-		public function groupAction (){
+		public function indexAction (){
 			if(IS_POST){
-				$platform = trim(I("platform"));	// 渠道
+				// $platform = trim(I("platform"));	// 渠道
 				$server = (int)trim(I("server"));	// 分区
 				$os = (int)trim(I("os"));			// 平台
 				$title = trim(I("title"));			// 标题
@@ -234,18 +234,19 @@
 				$sender = trim(I("sender"));		// 署名
 				$start = trim(I("start"));			// 开始时间
 				$end = trim(I("end"));				// 结束时间
+				$limit = I('limit');				// 限制时间
 				$itemIds = I("item_ids");			// 奖励的 IDs
 				$itemNums = I("item_nums");			// 奖励的数量
 				
 				$this->logsInfo = $platform . ", " . $server . ", " . $os . ", " . $title . ", " . $message . ", " . $sender . ", " . $start . ", " . $end . $this->logsSep . implode(", ", $itemIds) . $this->logsSep . implode(", ", $itemNums);
 		
 				// 未选择渠道，给出错误提示
-				if($platform === "0"){
-					$this->assign("error", 1);
-					$this->_assign();
-					$this->display();
-					return;
-				}
+				// if($platform === "0"){
+				// 	$this->assign("error", 1);
+				// 	$this->_assign();
+				// 	$this->display();
+				// 	return;
+				// }
 				
 		
 				// 未选择分区，给出错误提示
@@ -321,7 +322,7 @@
 				}
 		
 				// 数据库相关准备工作
-				$conf = "DB_" . strtoupper($platform) . "_" . $server . "_GDB";
+				$conf = "DB_" . $server . "_GDB";
 				$this->_db = M()->db($server, $conf);
 				
 				$id = $this->_db->table($this->_table["mail_master"])->max("id") + 1;
@@ -344,7 +345,7 @@
 					"item3_num"			=> $item3_num,
 					"item4_id"			=> $item4_id,
 					"item4_num"			=> $item4_num,
-					"receive_limit_time"=> null,
+					"receive_limit_time"=> empty($limit) ? null : date("Y-m-d H:i:s", strtotime($limit)),
 					"receipt_start_time"=> date("Y-m-d H:i:s", strtotime($start)),
 					"receipt_end_time"	=> date("Y-m-d H:i:s", strtotime($end)),
 					"create_time"		=> date("Y-m-d H:i:s"),
@@ -410,23 +411,29 @@
 		* 赋值操作
 		*/
 		private function _assign(){
-			$this->assign("platforms", $this->_getFlatforms());
+			// $this->assign("platforms", $this->_getPlatforms());
+			$this->assign('servers', $this->_getServers());
 			$this->assign("titles", $this->_titleCsv);
 			$this->assign("messages", $this->_messageCsv);
 			$this->assign("senders", $this->_senderCsv);
 			$this->assign("reward", $this->_getReward());
 			$this->assign("reward_name", $this->_rewardNameCsv);	
 		}
-		
+
+		/*
+		* 得到所有服务器数据
+		*/
+		private function _getServers() {
+			$platforms = D("ServerList")->getAllServerList();
+			
+			return $platforms;
+		}
+
 		/*
 		* 得到分区
 		*/
-		private function _getFlatforms(){
-			$platforms = [];
-			
-			foreach ($this->platform as $key => $value){
-				$platforms[] = $key;		
-			}
+		private function _getPlatforms() {
+			$platforms = D("PlatformList")->getAllPlatformList();
 			
 			return $platforms;
 		}

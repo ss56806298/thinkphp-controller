@@ -137,7 +137,18 @@
 			"pvp_season.csv"					=> "pvp/",	
 
 			"monster_upgrade_stats.csv"			=> "master/",
-			"second_gacha.csv"  				=> "gacha/"					
+			"second_gacha.csv"  				=> "gacha/",
+
+			'foundation.csv'  					=> "plugin/",	
+			'announcement.csv'	  				=> "plugin/",	
+			'guide_bonus.csv'   				=> "mission/",
+			'guild_ladder_reward.csv' 			=> 'girudo/',
+			'guild_season_reward.csv'			=> 'girudo/',	
+			'present_gacha_northeuro.csv'		=> 'mail/',
+			'season_ranking_reward.csv'			=> 'pvp/',
+			'taletown_gacha.csv'				=> 'gacha/',
+			'taletown_good_gacha.csv'			=> 'gacha/',
+			'payback.csv'						=> 'plugin/'
 		);
 		
 		/*

@@ -47,6 +47,8 @@
 	$("#group form #start").on("click", WdatePicker);
 	
 	$("#group form #end").on("click", WdatePicker);
+
+	$("#group form #limit").on("click", WdatePicker);
 	
 	$("#group form>a").on("click", function (){
 		str = "";

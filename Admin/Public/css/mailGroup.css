@@ -94,6 +94,16 @@
 	margin-right:47px;	
 }
 
+#group form p:nth-of-type(6) input{
+	width:186px;
+	border:1px solid #ccc;	
+}
+
+#group form p:nth-of-type(6) input:nth-of-type(1){
+	display:inline-block;
+	margin-right:47px;	
+}
+
 #group form div{
 	display:none;
 }

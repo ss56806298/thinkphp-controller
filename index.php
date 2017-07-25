@@ -6,7 +6,7 @@
 	define("HOME_PUBLIC", "/resource/Home/Public");
 	
 	// 后台静态资源路径
-	define("ADMIN_PUBLIC", "/resource/Admin/Public");
+	define("ADMIN_PUBLIC", "/thinkphp-controller/Admin/Public");
 	
 	// CSV 路径
 	define("CSV_PATH", "Admin/Public/csv");
